@@ -1,6 +1,3 @@
-const def = {
-  primary: '#00DEB2'
-}
 export default {
   default: {
     primary: '#2C89F1'
