@@ -1,10 +1,10 @@
 # Vue Snackbar
 
-Um plugin Vue.JS para criação e exibição de [snackbars](https://material.io/design/components/snackbars.html) seguindo as diretivas de material design criadas pelo Google.
+A Vue.JS plugin for creating and displaying [snackbars] (https://material.io/design/components/snackbars.html) following the material design policies created by Google.
 
-# Instalação
+# Install
 
-Instale a partir do npm:
+Install from npm:
 ```console
 npm install --save vue-snack
 ```
@@ -14,7 +14,7 @@ import VueSnackbar from 'vue-snack'
 
 Vue.use(VueSnackbar, options = {})
 ```
-Ou anexe ao partir do CDN:
+Or from CDN:
 
 ```html
 <head>
@@ -24,24 +24,25 @@ Ou anexe ao partir do CDN:
 </head>
 ```
 
-# Uso
-O plugin disponibiliza em todos os componentes a propriedade `$snack` em sua raiz, que por sua vez, contém todos os métodos configurados para exibir o snackbar desejado.
+# Use
+The plugin provides the `$snack` property in all components, this property contains all the methods configured to display the desired snackbar.
 
-Por padrão, o plugin contém dois três métodos principais de exibição: `success`, `danger` e `show`. Esses métodos apresentam snackbars com cores pré-configuradas para mensagens de sucesso, erro e mensagens padrão, respectivamente. O texto da mensagem em todos os casos apresentam a mesma cor, mas o botão de ação presente na snackbar varia de cor dependendo do método chamado.
+By default, the plugin contains three main display methods: `success`,` danger` and `show`. These methods present snackbars with preconfigured colors for success messages, error messages and standard messages, respectively. The text of the message in all cases have the same color, but the action button present in the snackbar varies in color depending on the method called.
 
-Cada método recebe como parâmetro uma string de mensagem, ou ainda, um objeto de configuração. No caso de uma string ser recebida, a snackbar é exibida apenas com o texto informado, sem apresentar botão de ação.
+Each method receives as a parameter a message string, or a configuration object. In case a string is received, the snackbar is only displayed with the text entered, without displaying an action button.
 
 ```javascript
-/**** Formas de utilização ****/
+/**** Using ****/
 
-vm.$snack.metodo('Minha mensagem') // Exibe um snackbar sem botão de ação
+vm.$snack.metodo('My Message') // Displays a snackbar without action button
 
-vm.$snack.metodo(config) // Exibe um snackbar de acordo com o objeto informado
+vm.$snack.metodo(config) // Displays a snackbar according to the given object
 
 ```
 
-## Configuração
-O objeto de configuração utilizado na exibição é simples e apresenta a seguinte estrutura:
+## Configure
+
+The configuration object used in the presentation is simple and has the following structure:
 ```javascript
 config = {
   text: String, // default ''
@@ -50,20 +51,20 @@ config = {
 }
 ```
 
-## Personalização
+## Personalize
 
-### Criando meus métodos
+### Creating methods
 
-Durante a instalação do plugin, um objeto de configuração é opcional. O objeto em questão pode conter a chave `"methods"`, que possui os métodos que podem ser executados a partir do `$snack` em cada componente. Cada método informado precisa conter uma cor associada.
+During the installation of the plugin, a configuration object is optional. The object in question can contain the `"methods"` key, which has the methods that can be executed from the `$snack` in each component. Each method in array must contain an associated color.
 
-Além disso, é possível informar a localização que o snackbar irá aparecer. Outro parâmetro de configuração é o `"time"`, que especifica quantos milisegundos o snackbar deve ser exibido. Segundo o Google, um snackbar deve durar no mínimo 5 e no máximo 10 segundos. O valor padrão é 7.5 segundos.
+In addition, it is possible to inform the location that the snackbar will appear. Another configuration parameter is `"time"`, which specifies how many milliseconds the snackbar should be displayed. According to Google, a snackbar should last at least 5 and at most 10 seconds. The default value is 7.5 seconds.
 
-. Segue um exemplo de objeto de configuração. Se a chave `"methods"` não é informada, os métodos disponíveis são os padrão informados anteriormente (`show`, `success` e `danger`).
+The following is an example of a configuration object. If the `"methods"` key is undefined, the available methods are ` show`, `success` and` danger`, as previously stated.
 
 
 ```javascript
 {
-  // Valores possíveis: 'top', 'top-left', 'top-right', 'bottom', 'bottom-left' e 'bottom-right'
+  // Possible values: 'top', 'top-left', 'top-right', 'bottom', 'bottom-left'
   // default 'bottom'
   position: String,
   // default 7500
@@ -73,7 +74,7 @@ Além disso, é possível informar a localização que o snackbar irá aparecer.
     {
       // default ''
       name: String,
-      // Qualquer cor HTML válida
+      // Any valid HTML color
       // default '#ecf0f1'
       color: String
     }
@@ -83,9 +84,9 @@ Além disso, é possível informar a localização que o snackbar irá aparecer.
 
 ## Demo
 
-A seguir, consta o necessário para exibição dos snackbars para mensagens de sucesso, erro, e padrão, além de um personalizado criado pelo usuário. Vale ressaltar que apenas um snackbar é exibido por vez, como consta a [diretiva de snackbar](https://material.io/design/components/snackbars.html) criada pelo Google:
+The following is what is needed to display snackbars for success, error, and default messages, in addition to a custom created by the user. It is noteworthy that only one snackbar is displayed at a time, as is the [snackbar directive](https://material.io/design/components/snackbars.html) created by Google:
 
-Na instalação do plugin:
+In plugin installation:
 ```javascript
 import Vue from 'vue'
 import VueSnackbar from 'vue-snack' 
@@ -103,23 +104,23 @@ export default {
   methods: {
     ok () {
       this.$snack.success({
-        text: 'Deu tudo certo por aqui',
-        button: '',
-        action: this.acaoDoBotao
+        text: 'Conversa arquivada',
+        button: 'desfazer',
+        action: this.clickAction
       })
     },
     notOk () {
       this.$snack.danger({
-        text: 'Deu tudo certo por aqui',
-        button: '',
-        action: this.acaoDoBotao
+        text: 'Erro ao salvar fotos',
+        button: 'refazer',
+        action: this.clickAction
       })
     },
     potato () {
       this.$snack.show({
-        text: 'Deu tudo certo por aqui',
-        button: '',
-        action: this.acaoDoBotao
+        text: 'Usuário adicionado',
+        button: 'desfazer',
+        action: this.clickAction
       })
     },
     creamCheese () {
@@ -132,6 +133,6 @@ export default {
 }
 ```
 
-Snackbars gerados de sucesso, erro, padrão e customizado, sucessivamente:
+Snackbars generated success, error, standard and customized, successively:
 ![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/defaults.png)
 
