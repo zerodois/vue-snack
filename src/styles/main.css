@@ -1,0 +1,33 @@
+.snackbar {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  border-radius: 4px;
+}
+.snackbar .snackbar__text {
+  flex: 1;
+}
+.snackbar .snackbar__action {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-left: 1rem;
+  color: var(--primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.snack-enter-active, .snack-leave-active {
+  transition: all .4s ease;
+}
+.snack-enter, .snack-leave-to {
+  opacity: 0;
+  transform: translateY(100%) translateX(-50%);
+}
