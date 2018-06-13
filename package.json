@@ -15,7 +15,7 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "dist/vue-snackbar.min.js",
+  "main": "dist/vue-snack.min.js",
   "repository": {
     "type" : "git",
     "url" : "https://github.com/zerodois/vue-snack"

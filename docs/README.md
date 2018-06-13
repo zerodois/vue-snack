@@ -1,6 +1,6 @@
 # Vue Snackbar
 
-A Vue.JS plugin for creating and displaying [snackbars] (https://material.io/design/components/snackbars.html) following the material design policies created by Google.
+A Vue.JS plugin for creating and displaying [snackbars](https://material.io/design/components/snackbars.html) following the material design policies created by Google.
 
 # Install
 

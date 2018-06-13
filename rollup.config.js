@@ -14,8 +14,8 @@ import csso from 'postcss-csso';
 import { minify } from 'uglify-es'
 
 const options = {
-  distName: 'vue-snackbar',
-  umdName: 'VueSnackbarPlugin',
+  distName: 'vue-snack',
+  umdName: 'VueSnackPlugin',
   transpiler: 'babel',
   styles: 'extract',
   external: ['vue']
