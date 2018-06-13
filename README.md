@@ -29,17 +29,57 @@ O plugin disponibiliza em todos os componentes a propriedade `$snack` em sua rai
 
 Por padrão, o plugin contém dois três métodos principais de exibição: `success`, `danger` e `show`. Esses métodos apresentam snackbars com cores pré-configuradas para mensagens de sucesso, erro e mensagens padrão, respectivamente. O texto da mensagem em todos os casos apresentam a mesma cor, mas o botão de ação presente na snackbar varia de cor dependendo do método chamado.
 
+Cada método recebe como parâmetro uma string de mensagem, ou ainda, um objeto de configuração. No caso de uma string ser recebida, a snackbar é exibida apenas com o texto informado, sem apresentar botão de ação.
 
+```javascroipt
+/**** Formas de utilização ****/
 
-## Demo
+vm.$snack.metodo('Minha mensagem') // Exibe um snackbar sem botão de ação
 
-Para mensagens de sucesso, temos:
+vm.$snack.metodo(config) // Exibe um snackbar de acordo com o objeto informado
+
+```
+
+### Configuração
+O objeto de configuração utilizado na exibição é simples e apresenta a seguinte estrutura:
+```javascript
+config = {
+  text: String, // default ''
+  button: String, // Default null
+  action: Function // default null
+}
+```
+
+### Demo
+
+A seguir, consta o necessário para exibição dos snackbars para mensagens de sucesso, erro, e padrão. Vale ressaltar que apenas um snackbar é exibido por vez, como consta a [diretiva de snackbar](https://material.io/design/components/snackbars.html) criada pelo Google:
 ```javascript
 export default {
   methods: {
     ok () {
-      this.$snack.success('Deu tudo certo por aqui')
+      this.$snack.success({
+        text: 'Deu tudo certo por aqui',
+        button: '',
+        action: this.acaoDoBotao
+      })
+    },
+    notOk () {
+      this.$snack.danger({
+        text: 'Deu tudo certo por aqui',
+        button: '',
+        action: this.acaoDoBotao
+      })
+    },
+    potato () {
+      this.$snack.show({
+        text: 'Deu tudo certo por aqui',
+        button: '',
+        action: this.acaoDoBotao
+      })
     }
   }
 }
 ```
+
+Snackbars gerados de sucesso, erro e padrão, sucessivamente:
+![snackbars](/img/defaults.png)
