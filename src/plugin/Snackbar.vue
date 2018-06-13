@@ -3,7 +3,8 @@
     <div
       v-if="active"
       :style="styles"
-      class="snackbar">
+      class="snackbar"
+      :class="config.position">
       <div class="snackbar__text">{{ text }}</div>
       <template v-if="button">
         <div
@@ -37,7 +38,7 @@ export default {
 }
 </script>
 
-<style lang=css>
+<style lang="scss">
 @import '../styles/variables.css';
-@import '../styles/main.css';
+@import '../styles/main.scss';
 </style>

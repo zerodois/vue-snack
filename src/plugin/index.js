@@ -52,7 +52,7 @@ const actions = async (params, theme) => {
   Object.assign(config.config, Default[theme])
   Object.assign(component, options)
   component.active = true
-  timeout = setTimeout(close, 1000000)
+  timeout = setTimeout(close, Default.time)
 }
 
 const $snack = () => {
