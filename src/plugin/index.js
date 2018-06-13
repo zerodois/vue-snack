@@ -19,15 +19,17 @@ const methods = {
 const sleep = time => new Promise((resolve, reject) => setTimeout(_ => resolve(), time))
 
 const create = parent => {
-  let div = document.createElement('div')
-  div.id = 'snackbar-' + Date.now()
-  document.body.appendChild(div)
-  config.config = Default
-  component = new Constructor({
-    propsData: config
-    // parent
+  document.addEventListener('DOMContentLoaded', event => { 
+    let div = document.createElement('div')
+    div.id = 'snackbar-' + Date.now()
+    document.body.appendChild(div)
+    config.config = Default
+    component = new Constructor({
+      propsData: config
+      // parent
+    })
+    component.$mount('#' + div.id)
   })
-  component.$mount('#' + div.id)
 }
 
 const close = function () {
