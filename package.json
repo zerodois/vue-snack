@@ -1,12 +1,13 @@
 {
   "name": "vue-snack",
-  "version": "0.0.1",
-  "description": "A Vue.js plugin",
+  "version": "0.0.5",
+  "description": "Snackbar plugin to Vue.JS",
   "author": "Felipe J. L. Rita <felipelopesrita@gmail.com>",
-  "private": "true",
   "license": "MIT",
   "keywords": [
-    "vue plugin"
+    "vue plugin",
+    "snackbar",
+    "material"
   ],
   "files": [
     "dist",
@@ -15,6 +16,10 @@
     "README.md"
   ],
   "main": "dist/vue-snackbar.min.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/zerodois/vue-snack"
+  },
   "module": "components/index.js",
   "scripts": {
     "build": "run-s build:**",
