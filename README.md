@@ -133,5 +133,5 @@ export default {
 ```
 
 Snackbars gerados de sucesso, erro, padrão e customizado, sucessivamente:
-![snackbars](/img/defaults.png)
+![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/defaults.png)
 
