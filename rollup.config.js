@@ -59,7 +59,7 @@ const config = {
   external: options.external,
   plugins: [
     replace({
-        'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV )
+      'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV )
     }),
     eslint({ include: [ '**/*.js', '**/*.vue' ] }),
     vue({ autoStyles: false, styleToImports: true }),

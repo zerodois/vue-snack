@@ -49,6 +49,15 @@ const actions = async (params, theme) => {
   if (typeof options === 'string') {
     options = { text: options }
   }
+  let fn = options.action
+  options.action = async () => {
+    if (!fn) {
+      return close()
+    }
+    fn()
+    close()
+  }
+
   Object.assign(config.config, Default[theme])
   Object.assign(component, options)
   component.active = true
@@ -68,7 +77,7 @@ const plugin = {
   install (Vue, options = {}) {
     Object.assign(Default, options)
     Constructor = Vue.extend(Snack)
-    Vue.prototype.$snackbar = $snack()
+    Vue.prototype.$snack = $snack()
     create()
   }
 }
