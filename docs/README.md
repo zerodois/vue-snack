@@ -6,11 +6,11 @@ Um plugin Vue.JS para criação e exibição de [snackbars](https://material.io/
 
 Instale a partir do npm:
 ```console
-npm install --save vue-snackbar
+npm install --save vue-snack
 ```
 ```javascript
 import Vue from 'vue'
-import VueSnackbar from 'vue-snackbar' 
+import VueSnackbar from 'vue-snack' 
 
 Vue.use(VueSnackbar, options = {})
 ```
@@ -18,9 +18,9 @@ Ou anexe ao partir do CDN:
 
 ```html
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/vue-snackbar/dist/vue-snackbar.min.css">  
+  <link rel="stylesheet" href="https://unpkg.com/vue-snack/dist/vue-snack.min.css">  
   <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="https://unpkg.com/vue-snackbar/dist/vue-snackbar.min.js"></script>
+  <script src="https://unpkg.com/vue-snack/dist/vue-snack.min.js"></script>
 </head>
 ```
 
@@ -88,7 +88,7 @@ A seguir, consta o necessário para exibição dos snackbars para mensagens de s
 Na instalação do plugin:
 ```javascript
 import Vue from 'vue'
-import VueSnackbar from 'vue-snackbar' 
+import VueSnackbar from 'vue-snack' 
 
 Vue.use(VueSnackbar, {
   methods: {
