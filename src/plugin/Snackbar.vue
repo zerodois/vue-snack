@@ -25,14 +25,16 @@ export default {
     active: false,
     text: '',
     button: '',
+    theme: 'default',
     action: null
   }),
   computed: {
     styles () {
-      return Object.keys(this.config).reduce((p, c) => {
-        p += `--${c}: ${this.config[c]};`
-        return p
-      }, '')
+      return `--primary: ${this.config[this.theme].primary}`
+      // return Object.keys(this.config).reduce((p, c) => {
+      //   p += `--${c}: ${this.config[c]};`
+      //   return p
+      // }, '')
     }
   }
 }

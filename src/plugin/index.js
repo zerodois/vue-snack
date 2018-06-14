@@ -61,7 +61,7 @@ const actions = async (params, theme) => {
   }
 
   Object.assign(config.config, Default[theme])
-  Object.assign(component, options)
+  Object.assign(component, Object.assign({}, options, { theme }))
   component.active = true
   timeout = setTimeout(close, Default.time)
 }
