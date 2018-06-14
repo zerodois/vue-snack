@@ -7,11 +7,12 @@ import eslint from 'rollup-plugin-eslint'
 import uglify from 'rollup-plugin-uglify'
 import sass from 'rollup-plugin-sass';
 import replace from 'rollup-plugin-replace'
+import copy from 'rollup-copy-plugin'
 import filesize from 'rollup-plugin-filesize'
-import autoprefixer from 'autoprefixer'
 import postcss from 'postcss'
 import csso from 'postcss-csso';
 import { minify } from 'uglify-es'
+import autoprefixer from 'autoprefixer'
 
 const options = {
   distName: 'vue-snack',
@@ -58,6 +59,10 @@ const config = {
   },
   external: options.external,
   plugins: [
+    copy({
+      'src/styles/KFOlCnqEu92Fr1MmEU9fBBc4.woff2': 'dist/KFOlCnqEu92Fr1MmEU9fBBc4.woff2',
+      'src/styles/KFOmCnqEu92Fr1Mu4mxK.woff2': 'dist/KFOmCnqEu92Fr1Mu4mxK.woff2'
+    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV )
     }),
