@@ -86,6 +86,8 @@ The following is an example of a configuration object. If the `"methods"` key is
 
 The following is what is needed to display snackbars for success, error, and default messages, in addition to a custom created by the user. It is noteworthy that only one snackbar is displayed at a time, as is the [snackbar directive](https://material.io/design/components/snackbars.html) created by Google:
 
+[online demo](https://jsfiddle.net/zerodois/a8fp2n6j/22/)
+
 In plugin installation:
 ```javascript
 import Vue from 'vue'
