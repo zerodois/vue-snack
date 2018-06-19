@@ -59,6 +59,10 @@ During the installation of the plugin, a configuration object is optional. The o
 
 In addition, it is possible to inform the location that the snackbar will appear. Another configuration parameter is `"time"`, which specifies how many milliseconds the snackbar should be displayed. According to Google, a snackbar should last at least 5 and at most 10 seconds. The default value is 7.5 seconds.
 
+Based on the new Gmail layout, the option to close the snackbar was made available. To the close icon be displayed, the `"close"` key must be set to `true` (the default is `false`).
+
+![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/close-icon.png "Snackbar with close button")
+
 The following is an example of a configuration object. If the `"methods"` key is undefined, the available methods are ` show`, `success` and` danger`, as previously stated.
 
 
@@ -69,6 +73,8 @@ The following is an example of a configuration object. If the `"methods"` key is
   position: String,
   // default 7500
   time: Number,
+  // default false
+  close: Boolean,
   // default []
   methods: [
     {
