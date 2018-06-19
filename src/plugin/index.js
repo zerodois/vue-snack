@@ -67,11 +67,22 @@ const actions = async (params, theme) => {
   timeout = setTimeout(close, Default.time)
 }
 
-const $snack = () => {
+const $snack = (opt) => {
   let vm = this
+  let news = {}
+  let themes = {}
+  opt.methods = opt.methods || []
+  opt.methods.forEach(item => {
+    news[item.name] = item.name
+    themes[item.name] = {
+      primary: item.color || Default.default.primary
+    }
+  })
+  Object.assign(Default, themes)
   let all = {}
-  for (let m in methods) {
-    all[m] = params => actions(params, methods[m])
+  let meth = Object.assign({}, methods, news)
+  for (let m in meth) {
+    all[m] = params => actions(params, meth[m])
   }
   return all
 }
@@ -80,7 +91,7 @@ const plugin = {
   install (Vue, options = {}) {
     Object.assign(Default, options)
     Constructor = Vue.extend(Snack)
-    Vue.prototype.$snack = $snack()
+    Vue.prototype.$snack = $snack(options)
     create()
   }
 }

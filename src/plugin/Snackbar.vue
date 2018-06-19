@@ -41,10 +41,6 @@ export default {
   computed: {
     styles () {
       return `--primary: ${this.config[this.theme].primary}`
-      // return Object.keys(this.config).reduce((p, c) => {
-      //   p += `--${c}: ${this.config[c]};`
-      //   return p
-      // }, '')
     }
   }
 }
