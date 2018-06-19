@@ -11,5 +11,6 @@ export default {
   background: '#353535',
   text: '#E3E3E3',
   time: 7500,
-  position: 'bottom'
+  position: 'bottom',
+  close: false
 }

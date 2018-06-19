@@ -28,6 +28,7 @@ const create = parent => {
       propsData: config
       // parent
     })
+    component.$on('close', _ => close())
     component.$mount('#' + div.id)
   })
 }
