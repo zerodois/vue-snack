@@ -1,6 +1,6 @@
 {
   "name": "vue-snack",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Snackbar plugin to Vue.JS",
   "author": "Felipe J. L. Rita <felipelopesrita@gmail.com>",
   "license": "MIT",
