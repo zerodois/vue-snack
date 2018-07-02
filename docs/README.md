@@ -144,3 +144,7 @@ export default {
 Snackbars generated success, error, standard and customized, successively:
 ![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/defaults.png)
 
+Snackbar on phone screen:
+
+![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/responsive.png "Snackbar on phone screen")
+
