@@ -20,7 +20,10 @@
   --text: #E3E3E3;
   --font: 'Roboto', sans-serif;
   --times: 1rem;
+  --padd: 1rem;
 }
+$sm: 576px;
+
 .snackbar {
   font-size: 1rem;
   background-color: var(--background);
@@ -31,17 +34,22 @@
   justify-content: center;
   position: fixed;
   min-height: var(--times);
-  padding: 1em;
+  padding: var(--padd);
   border-radius: 4px;
-
+  @media screen and (max-width: $sm) {
+    border-radius: 0;
+    width: calc(100% - (2 * var(--padd)));
+  }
   &.top, &.bottom {
-    transform: translateX(-50%);
-    left: 50%;
-    &-left {
-      left: 1rem;
-    }
-    &-right {
-      right: 1rem;
+    @media screen and (min-width: $sm) {
+      transform: translateX(-50%);
+      left: 50%;
+      &-left {
+        left: 1rem;
+      }
+      &-right {
+        right: 1rem;
+      }
     }
   }
   &[class*="bottom"] {
@@ -49,6 +57,15 @@
   }
   &[class*="top"] {
     top: 1rem;
+  }
+  @media screen and (max-width: $sm) {
+    left: 0;
+    &[class*="bottom"] {
+      bottom: 0;
+    }
+    &[class*="top"] {
+      top: 0;
+    }
   }
 
   .snackbar__text {
@@ -98,16 +115,32 @@
 }
 .snack-enter, .snack-leave-to {
   opacity: 0;
-  &.bottom {
-    transform: translateY(100%) translateX(-50%);
+  @media screen and (min-width: $sm) {
+    &.bottom {
+      transform: translateY(100%) translateX(-50%);
+    }
+    &.top {
+      transform: translateY(-100%) translateX(-50%);
+    }
+  }  
+  &[class*="top"] {
+    @media screen and (max-width: $sm) {
+      transform: translateY(-100%);
+    }
   }
-  &.top {
-    transform: translateY(-100%) translateX(-50%);
+  &[class*="bottom"] {
+    @media screen and (max-width: $sm) {
+      transform: translateY(100%);
+    }
   }
   &[class*="-left"] {
-    transform: translateX(-50%);
+    @media screen and (min-width: $sm) {
+      transform: translateX(-50%);
+    }
   }
   &[class*="-right"] {
-    transform: translateX(50%);
+    @media screen and (min-width: $sm) {
+      transform: translateX(50%);
+    }
   }
 }
