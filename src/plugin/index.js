@@ -89,10 +89,10 @@ const $snack = (opt) => {
 
 const plugin = {
   install (Vue, options = {}) {
-    Object.assign(Default, options)
     Constructor = Vue.extend(Snack)
-    Vue.prototype.$snack = $snack(options)
     create()
+    Object.assign(Default, options)
+    Vue.prototype.$snack = $snack(options)
   }
 }
 
